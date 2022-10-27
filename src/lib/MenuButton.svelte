@@ -57,15 +57,28 @@
   button {
     width: 6em;
     height: 6em;
-    margin: 0.8rem;
     border-radius: 50%;
     border: transparent;
-    background: rgba(var(--color-primary), 0.6);
+    background: rgba(var(--color-primary), 0.8);
     color: var(--color-secondary);
     font-size: 2.3rem;
     font-weight: 300;
     transition: all 0.5s;
     word-spacing: 5rem;
     transition: all 0.3s;
+  }
+  @media (max-width: 991px) {
+    button {
+      font-size: 2.1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    button {
+      width: 90%;
+      height: auto;
+      padding: 1.5rem;
+      border-radius: 25px;
+      word-spacing: 0.3rem;
+    }
   }
 </style>

@@ -7,7 +7,7 @@
 <style>
   .btn-end {
     position: absolute;
-    top: 3rem;
+    top: 3.5rem;
     right: 3rem;
     z-index: 3;
     width: 4rem;
@@ -29,5 +29,11 @@
   .btn-end:hover,
   .btn-end:active {
     transform: translateX(1rem);
+  }
+  @media (max-width: 600px) {
+    .btn-end {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 </style>

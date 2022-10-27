@@ -40,4 +40,12 @@
   .correct {
     background-color: #3fa796c7;
   }
+  @media (max-width: 480px) {
+    .wrapper {
+      min-width: fit-content;
+      gap: 2rem;
+      font-size: 2rem;
+      padding: 1.5rem 3rem;
+    }
+  }
 </style>

@@ -95,3 +95,9 @@ select {
   font-size: inherit;
   line-height: inherit;
 }
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
