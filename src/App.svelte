@@ -11,21 +11,23 @@
     renderPolygons,
     fetchContinentData,
     generateRandomColor,
+    waitFor,
   } from "./lib/utilities";
   import mapStore from "./lib/stores/map-store";
   import continents from "./lib/stores/continents-store";
   import gameStore from "./lib/stores/game-store";
   import timer from "./lib/stores/timer-store";
+  let disabled = false;
   let page = "menu";
   let gameStarts = false;
   let isCorrectCountry = null;
   let map;
-  mapStore.subscribe((m) => (map = m));
 
-  function countryOnClick() {
+  mapStore.subscribe((m) => (map = m));
+  async function countryOnClick() {
     if ($gameStore.countryToFind) {
       $gameStore.layers.forEach((l) => {
-        map.on("click", l.id, (e) => {
+        map.on("click", l.id, async (e) => {
           if (
             // @ts-ignore
             e.features[0].properties.ISO_A3 === $gameStore.countryToFind.ISO_A3
@@ -39,18 +41,19 @@
             );
             timer.reset();
             timer.start(30);
-            setTimeout(() => {
-              // @ts-ignore
-              gameStore.removeCountry($gameStore.countryToFind.ISO_A3);
-              gameStore.setRandomCountry();
-            }, 1000);
+            disabled = true;
+            await waitFor(1);
+            gameStore.removeCountry($gameStore.countryToFind.ISO_A3);
+            gameStore.setRandomCountry();
+            disabled = false;
           } else {
             isCorrectCountry = false;
             timer.reset();
             timer.start(30);
-            setTimeout(() => {
-              gameStore.setRandomCountry();
-            }, 1000);
+            disabled = true;
+            await waitFor(1);
+            gameStore.setRandomCountry();
+            disabled = false;
           }
         });
       });
@@ -81,6 +84,7 @@
     // // TEST>
     gameStore.setCountries(data);
     gameStore.setRandomCountry();
+
     renderPolygons(map, data.data.continent.countries.features);
     gameStore.setLayers(map);
     page = "game";
@@ -99,10 +103,14 @@
   $: if (page === "game" && $gameStore.countries.length === 0) {
     page = "congratulations";
   }
+  // $: console.log($gameStore);
 </script>
 
 <main>
-  <Map />
+  <div class:disabled>
+    <Map />
+  </div>
+
   {#if page !== "menu"}
     <EndGameButton on:click={endGame} />
   {/if}
@@ -134,4 +142,7 @@
 </main>
 
 <style>
+  .disabled {
+    pointer-events: none;
+  }
 </style>

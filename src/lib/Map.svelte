@@ -13,7 +13,6 @@
       center: [0, 0],
       renderWorldCopies: false,
     });
-
     mapStore.setMap(map);
   });
 </script>

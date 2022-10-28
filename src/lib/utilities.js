@@ -1,6 +1,9 @@
 export const generateRandomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min));
 
+export function waitFor(sec) {
+  return new Promise((resolve) => setTimeout(resolve, sec * 1000));
+}
 export function generateRandomColor(brightness = "all") {
   let additional = brightness === "light" ? 1 : 0;
   const divisor = brightness !== "all" ? 2 : 1;
