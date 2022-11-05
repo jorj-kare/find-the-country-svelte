@@ -12,7 +12,9 @@
       zoom: 1,
       center: [0, 0],
       renderWorldCopies: false,
+      pitch: 0,
     });
+    map.touchZoomRotate.disableRotation();
     mapStore.setMap(map);
   });
 </script>

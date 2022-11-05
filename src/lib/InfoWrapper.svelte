@@ -27,7 +27,7 @@
     min-width: 30rem;
     transform: translateX(-50%);
     border-radius: 25px;
-    background-color: rgba(var(--color-primary), 0.9);
+    background-color: rgba(205, 217, 246, 0.703);
     color: var(--color-secondary);
     font-family: "Inconsolata";
     font-weight: 400;
@@ -39,6 +39,11 @@
   }
   .correct {
     background-color: #3fa796c7;
+  }
+  @media (max-width: 822px) {
+    .wrapper {
+      border: 0.5px solid var(--color-secondary);
+    }
   }
   @media (max-width: 480px) {
     .wrapper {

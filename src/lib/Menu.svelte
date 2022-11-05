@@ -41,6 +41,7 @@
       padding: 0 10rem;
       border: none;
       flex-wrap: wrap-reverse;
+      margin-bottom: 0.5rem;
     }
   }
   @media (max-width: 600px) {
@@ -48,10 +49,10 @@
       padding: 0 2.2rem;
       flex-wrap: wrap;
     }
-  }
-  @media (max-width: 480px) {
-    /* .btn-wrapper {
-      padding: 0 2rem;
-    } */
+    @media (max-width: 480px) {
+      .btn-wrapper {
+        margin-bottom: 1.5rem;
+      }
+    }
   }
 </style>

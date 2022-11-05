@@ -76,7 +76,7 @@
     button {
       width: 90%;
       height: auto;
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 25px;
       word-spacing: 0.3rem;
     }

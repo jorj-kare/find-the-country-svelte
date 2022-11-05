@@ -7,7 +7,7 @@
 <style>
   .btn-end {
     position: absolute;
-    top: 3.5rem;
+    top: 3rem;
     right: 3rem;
     z-index: 3;
     width: 4rem;
@@ -32,7 +32,7 @@
   }
   @media (max-width: 600px) {
     .btn-end {
-      width: 2rem;
+      width: 3rem;
       height: 2rem;
     }
   }
