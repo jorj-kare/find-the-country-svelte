@@ -11,7 +11,7 @@
   .menu {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     inset: 0;

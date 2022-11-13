@@ -17,6 +17,7 @@
   import continents from "./lib/stores/continents-store";
   import gameStore from "./lib/stores/game-store";
   import timer from "./lib/stores/timer-store";
+  import RadioButton from "./lib/RadioButton.svelte";
   let disabled = false;
   let page = "menu";
   let gameStarts = false;
@@ -72,10 +73,12 @@
     page = "menu";
     resetGame();
   }
+
   async function startGame(e) {
     gameStarts = true;
     timer.start(30);
     const data = await fetchContinentData(e.detail);
+
     // // <TEST
     // data.data.continent.countries.features.splice(
     //   1,
@@ -87,6 +90,7 @@
 
     renderPolygons(map, data.data.continent.countries.features);
     gameStore.setLayers(map);
+
     page = "game";
     countryOnClick();
   }
@@ -103,7 +107,6 @@
   $: if (page === "game" && $gameStore.countries.length === 0) {
     page = "congratulations";
   }
-  // $: console.log($gameStore);
 </script>
 
 <main>
@@ -116,6 +119,7 @@
   {/if}
   {#if page === "menu"}
     <Menu>
+      <RadioButton />
       <svelte:fragment slot="btn-wrapper">
         {#each $continents as c}
           <MenuButton

@@ -19,11 +19,11 @@ export async function fetchContinentData(continent) {
     const url = `https://find-the-country-api.herokuapp.com/api/v1/continent/${continentName}`;
     const res = await fetch(url);
     const data = await res.json();
+
     if (!res.ok) throw new Error(data.message, data.status);
     return data;
   } catch (err) {
     alert(err.message);
-    console.log(err);
   }
 }
 export function renderPolygons(map, polygons) {

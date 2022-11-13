@@ -15,6 +15,7 @@
       pitch: 0,
     });
     map.touchZoomRotate.disableRotation();
+
     mapStore.setMap(map);
   });
 </script>
@@ -32,5 +33,6 @@
   #map {
     height: 100vh;
     width: 100vw;
+    background-color: black;
   }
 </style>
