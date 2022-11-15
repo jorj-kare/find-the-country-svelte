@@ -16,7 +16,10 @@ export function generateRandomColor(brightness = "all") {
 export async function fetchContinentData(continent) {
   try {
     const continentName = continent.replace(" ", "_");
-    const url = `https://find-the-country-api.herokuapp.com/api/v1/continent/${continentName}`;
+    // const url = `https://find-the-country-api.eu-west-1.elasticbeanstalk.com/api/v1/continent/${continentName}`;
+    // const url = `https://find-the-country-api.herokuapp.com/api/v1/continent/${continentName}`;
+    const url = `https://find-the-country-api.up.railway.app/api/v1/continent/${continentName}`;
+
     const res = await fetch(url);
     const data = await res.json();
 
