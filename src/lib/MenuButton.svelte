@@ -1,7 +1,7 @@
 <script>
   import mapStore from "./stores/map-store";
   import { generateRandomColor } from "./utilities";
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
   export let value = null;
   export let zoom = 0;
   export let coords = [];
@@ -9,6 +9,8 @@
   let dispatch = createEventDispatcher();
   mapStore.subscribe((m) => (map = m));
   let btn;
+
+  onMount(() => mouseOut());
   function mouseOver() {
     btn.style.background = generateRandomColor("light");
     map.flyTo({
