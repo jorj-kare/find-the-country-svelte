@@ -26,17 +26,29 @@
   }
   function mouseOut() {
     btn.removeAttribute("style");
-
-    map.flyTo({
-      center: [0, 0],
-      zoom: 2,
-      speed: 0.5,
-      curve: 1,
-      easing(t) {
-        return t;
-      },
-      essential: true,
-    });
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      map.flyTo({
+        center: [0, 0],
+        zoom: 1,
+        speed: 0.5,
+        curve: 1,
+        easing(t) {
+          return t;
+        },
+        essential: true,
+      });
+    } else {
+      map.flyTo({
+        center: [0, 0],
+        zoom: 2,
+        speed: 0.5,
+        curve: 1,
+        easing(t) {
+          return t;
+        },
+        essential: true,
+      });
+    }
   }
 </script>
 
