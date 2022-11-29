@@ -20,6 +20,8 @@
     justify-items: center;
     align-items: center;
     width: fit-content;
+    text-align: center;
+    margin: 2rem;
     padding: 8rem;
     border: 15px dotted rgba(var(--color-primary), 0.9);
     border-radius: 25px;
@@ -67,5 +69,34 @@
     /* 100% {
       background-position: 0%, 50%;
     } */
+  }
+  @media (max-width: 822px) {
+    span {
+      font-size: 8rem;
+    }
+    h1 {
+      font-size: 6rem;
+    }
+    .titles {
+      margin: 0.5rem;
+      padding: 2rem;
+      border-width: 10px;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    span {
+      font-size: 6rem;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    .titles {
+      width: 100%;
+      margin: 0.5rem;
+      padding: 2rem 1rem;
+      border-width: 10px;
+      text-align: center;
+    }
   }
 </style>
