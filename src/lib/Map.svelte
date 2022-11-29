@@ -9,7 +9,7 @@
     let map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/jorj-kare/ckwcmd6j52li015qo50pcvr9u",
-      zoom: 1,
+      zoom: 0,
       center: [0, 0],
       renderWorldCopies: false,
       pitch: 0,
