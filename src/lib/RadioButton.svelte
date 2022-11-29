@@ -90,4 +90,9 @@
   .globe {
     color: rgba(var(--color-primary), 1);
   }
+  @media (max-width: 480px) {
+    label {
+      font-size: 1.8rem;
+    }
+  }
 </style>
