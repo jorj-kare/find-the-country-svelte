@@ -79,12 +79,12 @@
     timer.start(30);
     const data = await fetchContinentData(e.detail);
 
-    // // <TEST
+    // <TEST
     // data.data.continent.countries.features.splice(
     //   1,
-    //   data.data.continent.countries.features.length - 2
+    //   data.data.continent.countries.features.length - 5
     // );
-    // // TEST>
+    // TEST>
     gameStore.setCountries(data);
     gameStore.setRandomCountry();
 
