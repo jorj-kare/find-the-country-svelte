@@ -18,7 +18,7 @@ export async function fetchContinentData(continent) {
     const continentName = continent.replace(" ", "_");
     // const url = `https://find-the-country-api.eu-west-1.elasticbeanstalk.com/api/v1/continent/${continentName}`;
     // const url = `https://find-the-country-api.herokuapp.com/api/v1/continent/${continentName}`;
-    const url = `https://https://find-the-country-api.onrender.com/api/v1/continent/${continentName}`;
+    const url = `https://find-the-country-api.onrender.com/api/v1/continent/${continentName}`;
     // const url = `http://127.0.0.1:3000/api/v1/continent/${continentName}`;
 
     const res = await fetch(url);
